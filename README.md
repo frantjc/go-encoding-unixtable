@@ -1,4 +1,4 @@
-# go-encoding-unixtable
+# go-encoding-unixtable [![CI](https://github.com/frantjc/go-encoding-unixtable/actions/workflows/push.yml/badge.svg?branch=main&event=push)](https://github.com/frantjc/go-encoding-unixtable/actions)
 
 Golang module akin to `encoding/json` but for encoding structs to a unixtable format for readability:
 
