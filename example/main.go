@@ -7,30 +7,30 @@ import (
 )
 
 type Person struct {
-	ID string   `unixtable:"-"`
+	ID   string `unixtable:"-"`
 	Name string `unixtable:"Full Name"`
-	Age int
+	Age  int
 }
 
 func GetPerson(id string) *Person {
 	return &Person{
-		ID: id,
+		ID:   id,
 		Name: "Obi-Wan Kenobi",
-		Age: 35,
+		Age:  35,
 	}
 }
 
 func GetPeople() []Person {
 	return []Person{
 		{
-			ID: "1",
+			ID:   "1",
 			Name: "Obi-Wan Kenobi",
-			Age: 35,
+			Age:  35,
 		},
 		{
-			ID: "2",
+			ID:   "2",
 			Name: "General Grievous",
-			Age: 50,
+			Age:  50,
 		},
 	}
 }

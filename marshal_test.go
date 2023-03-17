@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/frantjc/go-encoding-unixtable"
+	unixtable "github.com/frantjc/go-encoding-unixtable"
 )
 
 func TestMarshalStruct(t *testing.T) {
