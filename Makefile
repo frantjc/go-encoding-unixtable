@@ -1,6 +1,8 @@
 GO = go
 GOLANGCI-LINT = golangci-lint
 
+.DEFAULT: test
+
 fmt generate test:
 	@$(GO) $@ ./...
 
@@ -16,4 +18,4 @@ ven: vendor
 ver: verify
 format: fmt
 
-.PHONY: fmt generate test download vendor verify lint gen dl ven ver format
+.PHONY: fmt test download vendor verify lint dl ven ver format
