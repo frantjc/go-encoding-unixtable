@@ -80,14 +80,23 @@ func (e *Encoder) Encode(a any) error {
 				continue
 			}
 
-			key := f.Name
+			var (
+				key = f.Name
+				omitEmpty = false
+			)
 			if tag := f.Tag.Get(Tag); tag != "" {
-				key = tag
+				parts := strings.SplitN(tag, ",", 2)
+				key = parts[0]
+				if len(parts) > 1 {
+					omitEmpty = parts[1] == "omitempty"
+				}
 			}
 
 			if key != "-" {
-				keys = append(keys, key)
-				vals = append(vals, fmt.Sprint(v.Field(i)))
+				if val := fmt.Sprint(v.Field(i)); val != "" || !omitEmpty {
+					keys = append(keys, key)
+					vals = append(vals, val)
+				}
 			}
 		}
 
