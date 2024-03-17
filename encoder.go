@@ -95,7 +95,7 @@ func (e *Encoder) Encode(a any) error {
 			}
 
 			if key != "-" {
-				if val := fmt.Sprint(v.Field(i)); val != "" || !omitEmpty {
+				if val := fmt.Sprint(v.Field(i)); val != "" || !omitEmpty || e.recursing {
 					keys = append(keys, key)
 					vals = append(vals, val)
 				}
