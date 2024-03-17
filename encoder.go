@@ -81,7 +81,7 @@ func (e *Encoder) Encode(a any) error {
 			}
 
 			var (
-				key = f.Name
+				key       = f.Name
 				omitEmpty = false
 			)
 			if tag := f.Tag.Get(Tag); tag != "" {
