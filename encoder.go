@@ -86,7 +86,7 @@ func (e *Encoder) Encode(a any) error {
 			)
 			if tag := f.Tag.Get(Tag); tag != "" {
 				parts := strings.SplitN(tag, ",", 2)
-				if _key := parts[0]; key != "" {
+				if _key := parts[0]; _key != "" {
 					key = _key
 				}
 				if len(parts) > 1 {
