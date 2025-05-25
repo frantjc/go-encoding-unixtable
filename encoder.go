@@ -12,7 +12,7 @@ import (
 var ErrTypeNotSupported = errors.New("type not supported")
 
 func NewEncoder(w io.Writer) *Encoder {
-	return &Encoder{tabwriter.NewWriter(w, DefaultMinWidth, DefaultTabWidth, DefaultPadding, ' ', tabwriter.DiscardEmptyColumns), false, false}
+	return &Encoder{tabwriter.NewWriter(w, 1, 2, 3, ' ', tabwriter.DiscardEmptyColumns), false, false}
 }
 
 type Encoder struct {
